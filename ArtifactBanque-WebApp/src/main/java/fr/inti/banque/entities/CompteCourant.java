@@ -10,6 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author G&G
+ * @see Entité CompteCourant du projet ProxyBanque. Le compte courant est relié à un client et à une carte visaElectron.
+ * 
+ */
 @Entity(name = "compteCourant")
 @Table(name = "compte_courant")
 public class CompteCourant {
