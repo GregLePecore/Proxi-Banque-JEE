@@ -1,5 +1,5 @@
 package fr.inti.banque.entities;
 
-public class Agence {
+public class Conseiller {
 
 }
