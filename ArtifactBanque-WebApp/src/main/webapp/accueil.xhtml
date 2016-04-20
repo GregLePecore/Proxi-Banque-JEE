@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">	
+    <h:head>
+        <title>Affichage des clients</title>
+    </h:head>
+    <h:body>
+    	<h:form id="formulaire">    	
+    	<p:dataTable id="tableauClients" value="#{mbListeClients.listeTest}" var="client" rows="3" paginator="true">
+                <p:column headerText="ID" sortBy="#{client.id}">
+                     #{client.id}
+                </p:column>
+                <p:column headerText="Nom" sortBy="#{client.nom}">
+                     #{client.nom}
+                </p:column>
+                <p:column headerText="Prenom" sortBy="#{client.prenom}">
+                     #{client.prenom}
+                </p:column>
+                <p:column headerText="Adresse" sortBy="#{client.adresse}">
+                     #{client.adresse}
+                </p:column> 
+                <p:column headerText="Code Postal" sortBy="#{client.codePostal}">
+                     #{client.codePostal}
+                </p:column> 
+                <p:column headerText="Ville" sortBy="#{client.ville}">
+                     #{client.ville}
+                </p:column> 
+                <p:column headerText="Telephone" sortBy="#{client.telephone}">
+                     #{client.telephone}
+                </p:column>                                                                                                       	
+    	</p:dataTable>    	
+    	
+    	</h:form>
+     </h:body>
+     
+</html>
