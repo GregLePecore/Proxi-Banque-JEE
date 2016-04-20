@@ -55,11 +55,4 @@
 	<!-- prise en compte du gestionnaire de transaction pour @Transactional -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
-
-	<bean id="clientDaoBean" class="fr.inti.banque.dao.ClientDaoImpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactoryBean"></ref>
-		</property>
-	</bean>
-
 </beans>
