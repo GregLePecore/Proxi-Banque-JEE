@@ -17,7 +17,8 @@ import javax.persistence.Table;
 /**
  * 
  * @author G&G
- * @see Entité Client du projet ProxyBanque. Le client peut posséder un compte courant ainsi qu'un compte épargne.
+ * @see Entité Client du projet ProxyBanque. Le client peut posséder un compte
+ *      courant ainsi qu'un compte épargne.
  * 
  */
 @Entity(name = "client")
@@ -38,7 +39,7 @@ public class Client {
 	private int codePostal;
 	@Column(name = "ville")
 	private String ville;
-	@Column(name="telephone")
+	@Column(name = "telephone")
 	private int telephone;
 	@ManyToOne
 	@JoinColumn(name = "id_conseiller")
@@ -47,7 +48,7 @@ public class Client {
 	private CompteCourant compteCourant;
 	@OneToOne
 	private CompteEpargne compteEpargne;
-	
+
 	public Client(int id, String nom, String prenom, String adresse, int codePostal, String ville, int telephone,
 			Conseiller conseiller, CompteCourant compteCourant, CompteEpargne compteEpargne) {
 		super();
@@ -89,12 +90,22 @@ public class Client {
 		this.conseiller = conseiller;
 	}
 
+	public Client(String nom, String prenom, String adresse, int codePostal, String ville, int telephone) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.adresse = adresse;
+		this.codePostal = codePostal;
+		this.ville = ville;
+		this.telephone = telephone;
+	}
+
 	public Client() {
 		super();
 	}
 
 	// GETTERS & SETTERS
-	
+
 	public int getId() {
 		return id;
 	}
