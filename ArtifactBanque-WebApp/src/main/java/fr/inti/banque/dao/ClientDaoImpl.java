@@ -36,6 +36,7 @@ public class ClientDaoImpl implements IDao<Client> {
 	}
 
 	public List<Client> getAll() {
+		System.out.println("ODKZAODKAZODKJOAZKDOAZKDOZAKDOKAZOKDAOZZKDOAKSS");
 		return getSession().createQuery("from client").list();
 	}
 

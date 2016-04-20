@@ -1,6 +1,5 @@
 package fr.inti.banque.entities;
 
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
