@@ -23,7 +23,7 @@
 
 	<!-- Définition du sessionFactory avec ref au bean dataSource -->
 	<!-- BEWARE if you use Hibernate 3, use instead class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean -->
-	<bean id="sessionFactory"
+	<bean id="sessionFactoryBean"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="packagesToScan" value="fr.inti.banque.entities" />
@@ -44,7 +44,7 @@
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
+			<ref bean="sessionFactoryBean" />
 		</property>
 
 	</bean>
@@ -54,5 +54,12 @@
 	<context:component-scan base-package="fr" />
 	<!-- prise en compte du gestionnaire de transaction pour @Transactional -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
+
+
+	<bean id="clientDaoBean" class="fr.inti.banque.dao.ClientDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactoryBean"></ref>
+		</property>
+	</bean>
 
 </beans>
