@@ -27,12 +27,12 @@ public class TestDaoMain {
 		List<Client> clients = new ArrayList<Client>();
 
 		// Get All clients + affichage console
-		// clients = clientDao.getAll();
-		// for (Client client : clients) {
-		// System.out.println(client.getId() + client.getNom() +
-		// client.getPrenom() + client.getAdresse()
-		// + client.getTelephone());
-		// }
+		 clients = clientDao.getAll();
+		 for (Client client : clients) {
+		 System.out.println(client.getId() + client.getNom() +
+		 client.getPrenom() + client.getAdresse()
+		 + client.getTelephone());
+		 }
 
 		// Get Client by Id + affichage console
 		// Client clientId = clientDao.getById(2);

@@ -5,7 +5,10 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
@@ -23,38 +26,36 @@ import fr.inti.banque.entities.Client;
  */
 @Repository("clientDaoBean")
 @Transactional
-public class ClientDaoImpl extends HibernateDaoSupport implements IDao<Client> {
+public class ClientDaoImpl implements IDao<Client> {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	private Session getSession(){
+		return sessionFactory.getCurrentSession();
+	}
 
 	public List<Client> getAll() {
-		String reqGetAll = "FROM client";
-		List<Client> liste = new ArrayList<Client>();
-		liste = (List<Client>) getHibernateTemplate().find(reqGetAll);
-		return liste;
+		return getSession().createQuery("from client").list();
 	}
 
 	public Client getById(int id) {
-		String reqById = "FROM client WHERE id=?";
-		List<Client> clients = new ArrayList<Client>();
-		clients = (List<Client>) getHibernateTemplate().find(reqById, id);
-		return clients.get(0);
+		Client client = (Client)getSession().get(Client.class, id);
+		return client;
 	}
 
 	public void add(Client object) {
-		getHibernateTemplate().setCheckWriteOperations(false);
-		getHibernateTemplate().save(object);
+		getSession().save(object);
 	}
 
 	public void deleteById(int id) {
-		getHibernateTemplate().setCheckWriteOperations(false);
+		
 		Client clientToDelete = this.getById(id);
-		getHibernateTemplate().flush();
-		getHibernateTemplate().delete(clientToDelete);
-		getHibernateTemplate().flush();
+		getSession().delete(clientToDelete);
 	}
 
 	public void update(Client object) {
-		getHibernateTemplate().setCheckWriteOperations(false);
-		getHibernateTemplate().update(object);
+		getSession().update(object);
 	}
 
 }
