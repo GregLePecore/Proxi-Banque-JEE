@@ -9,6 +9,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
+/**
+ * 
+ * @author G&G
+ * @see Entité Agence du projet ProxyBanque. L'agence est gérée par un gérant. Oui Oui.
+ * 
+ */
 @Entity(name = "agence")
 @Table(name = "agences")
 public class Agence {

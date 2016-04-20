@@ -10,6 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author G&G
+ * @see Entité VisaElectron du projet ProxyBanque. La carte bancaire VisaElectron est reliée à un compte courant.
+ * 
+ */
 @Entity(name = "visaElectron")
 @Table(name = "visa_electron")
 public class VisaElectron {

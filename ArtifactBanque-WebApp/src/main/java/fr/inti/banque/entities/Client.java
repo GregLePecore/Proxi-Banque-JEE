@@ -14,6 +14,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author G&G
+ * @see Entité Client du projet ProxyBanque. Le client peut posséder un compte courant ainsi qu'un compte épargne.
+ * 
+ */
 @Entity(name = "client")
 @Table(name = "clients")
 public class Client {

@@ -12,6 +12,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author G&G
+ * @see Entité Gerant du projet ProxyBanque. Le gérant est responsable d'une agence et possède une liste de conseillers sous ses ordres.
+ * 
+ */
 @Entity(name = "gerant")
 @Table(name = "gerants")
 public class Gerant {

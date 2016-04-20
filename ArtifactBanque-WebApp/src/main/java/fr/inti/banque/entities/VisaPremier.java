@@ -8,6 +8,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author G&G
+ * @see Entité VisaPremier du projet ProxyBanque. La carte bancaire VisaPremier est reliée à un compte épargne.
+ * 
+ */
 @Entity(name = "visaPremier")
 @Table(name = "visa_premier")
 public class VisaPremier {

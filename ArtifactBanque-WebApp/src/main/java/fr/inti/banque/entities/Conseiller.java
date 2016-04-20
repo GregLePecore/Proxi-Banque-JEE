@@ -13,6 +13,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author G&G
+ * @see Entité Conseiller du projet ProxyBanque. Le conseiller possède une liste de clients, et est dirigé par un gérant.
+ * 
+ */
 @Entity(name = "conseiller")
 @Table(name = "conseillers")
 public class Conseiller {

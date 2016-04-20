@@ -10,6 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author G&G
+ * @see Entité CompteEpargne du projet ProxyBanque. Le compte Epargne est relié à un client ainsi qu'à une carte visaPremier.
+ * 
+ */
 @Entity(name = "compteEpargne")
 @Table(name = "compte_epargne")
 public class CompteEpargne {
