@@ -33,6 +33,7 @@ public class CompteCourantDaoImpl implements IDaoCompteCourant {
 		return sessionFactory.getCurrentSession();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<CompteCourant> getAll() {
 		return getSession().createQuery("from compteCourant").list();
 	}

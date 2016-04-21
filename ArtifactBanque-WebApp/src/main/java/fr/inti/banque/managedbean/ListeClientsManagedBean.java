@@ -4,23 +4,21 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
-import fr.inti.banque.dao.IDao;
-import fr.inti.banque.dao.IDaoClient;
-import fr.inti.banque.daoImpl.ClientDaoImpl;
 import fr.inti.banque.entities.Client;
 import fr.inti.banque.service.IServiceClient;
 
 @Scope
 @Controller(value="mbListeClients")
 public class ListeClientsManagedBean implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Autowired
 	private IServiceClient serviceClient;
 	private List<Client> clients = new ArrayList<Client>();

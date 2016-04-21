@@ -1,4 +1,4 @@
-package fr.inti.banque.service;
+package fr.inti.banque.serviceImpl;
 
 import java.util.List;
 
@@ -8,7 +8,15 @@ import org.springframework.stereotype.Service;
 
 import fr.inti.banque.dao.IDaoClient;
 import fr.inti.banque.entities.Client;
+import fr.inti.banque.service.IServiceClient;
 
+/**
+ * 
+ * @author El Grande Geoffrey
+ * 
+ * @see Service Client Implémenté. Répétition des fonctions CRUD du DAO, pas d'ajout particulier.
+ *
+ */
 @Service("serviceClient")
 @Component
 public class ServiceClientImpl implements IServiceClient {

@@ -33,6 +33,7 @@ public class CompteEpargneDaoImpl implements IDaoCompteEpargne {
 		return sessionFactory.getCurrentSession();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<CompteEpargne> getAll() {
 		return getSession().createQuery("from compteEpargne").list();
 	}
