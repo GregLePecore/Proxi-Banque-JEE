@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.context.support.ServletContextLiveBeansView;
 
 import fr.inti.banque.dao.ClientDaoImpl;
 import fr.inti.banque.dao.IDao;
@@ -25,13 +26,18 @@ public class ListeClientsManagedBean implements Serializable{
 	private IServiceClient serviceClient;
 	private List<Client> clients = new ArrayList<Client>();
 	private Client clientAdd=new Client();
-	
+	private Client clientSelected=new Client();
+
 	public ListeClientsManagedBean() {
-		System.out.println("Ceci est le CONSTRUCTEUR");
 	}
 	
 	public void addClient() {
 		serviceClient.ajouterClient(clientAdd);
+	}
+	
+	public void deleteClient() {
+		serviceClient.supprimerClient(clientSelected.getId());
+		clients.remove(clientSelected);
 	}
 	
 	// GETTERS & SETTERS
@@ -39,21 +45,23 @@ public class ListeClientsManagedBean implements Serializable{
 	public Client getClientAdd() {
 		return clientAdd;
 	}
-
 	public void setClientAdd(Client clientAdd) {
 		this.clientAdd = clientAdd;
 	}
 	
 	public List<Client> getClients() {
-		System.out.println("Ceci est le GET");
 		clients = serviceClient.obtenirAllClients();
-
 		return clients;
 	}
-
 	public void setClients(List<Client> clients) {
-		System.out.println("Ceci est le SET");
 		this.clients = clients;
+	}
+	
+	public Client getClientSelected() {
+		return clientSelected;
+	}
+	public void setClientSelected(Client clientSelected) {
+		this.clientSelected = clientSelected;
 	}
 	
 }

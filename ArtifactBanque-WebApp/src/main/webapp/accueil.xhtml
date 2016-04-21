@@ -11,7 +11,7 @@
     	<h:form id="formulaire">    
     	 	    	
     	<p:contextMenu>
-			<p:menuitem value="Supprimer" update="tableauClients" icon="ui-icon-close"/>
+			<p:menuitem value="Supprimer" actionListener="#{mbListeClients.deleteClient}" update="tableauClients" icon="ui-icon-close" selection="#{mbListeClients.clientSelected}" selectionMode="single" rowKey="#{client.id}"/>
 			<p:menuitem value="Editer" icon="ui-icon-arrowrefresh-1-w"/>                   
 		</p:contextMenu>
 
@@ -75,7 +75,7 @@
 		        </p:row>	         
 	        </f:facet>
     	</p:panelGrid>
-    	<p:commandButton value="Ajouter" icon="ui-icon-disk" actionListener="#{mbListeClients.addClient}"></p:commandButton> 		   	
+    	<p:commandButton update="tableauClients" value="Ajouter" icon="ui-icon-disk" actionListener="#{mbListeClients.addClient}"></p:commandButton> 		   	
     	</h:form>
      </h:body>
      
