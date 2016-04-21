@@ -24,8 +24,25 @@ public class ListeClientsManagedBean implements Serializable{
 	@Autowired
 	private IServiceClient serviceClient;
 	private List<Client> clients = new ArrayList<Client>();
+	private Client clientAdd=new Client();
+	
+	public ListeClientsManagedBean() {
+		System.out.println("Ceci est le CONSTRUCTEUR");
+	}
+	
+	public void addClient() {
+		serviceClient.ajouterClient(clientAdd);
+	}
 	
 	// GETTERS & SETTERS
+	
+	public Client getClientAdd() {
+		return clientAdd;
+	}
+
+	public void setClientAdd(Client clientAdd) {
+		this.clientAdd = clientAdd;
+	}
 	
 	public List<Client> getClients() {
 		System.out.println("Ceci est le GET");
@@ -33,15 +50,10 @@ public class ListeClientsManagedBean implements Serializable{
 
 		return clients;
 	}
-	
+
 	public void setClients(List<Client> clients) {
 		System.out.println("Ceci est le SET");
 		this.clients = clients;
 	}
-	
-	public ListeClientsManagedBean() {
-		System.out.println("Ceci est le CONSTRUCTEUR");
-	}
-	
 	
 }
