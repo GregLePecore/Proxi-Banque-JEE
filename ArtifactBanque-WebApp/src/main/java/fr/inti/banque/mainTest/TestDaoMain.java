@@ -7,9 +7,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-import fr.inti.banque.dao.ClientDaoImpl;
 import fr.inti.banque.dao.IDao;
 import fr.inti.banque.dao.IDaoClient;
+import fr.inti.banque.daoImpl.ClientDaoImpl;
 import fr.inti.banque.entities.Client;
 import fr.inti.banque.service.IServiceClient;
 

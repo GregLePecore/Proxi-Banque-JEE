@@ -4,6 +4,12 @@ import java.util.List;
 
 import fr.inti.banque.entities.Client;
 
+/**
+ * 
+ * @author El Grande Geoffrey
+ * @see Interface du Dao Client
+ *
+ */
 public interface IDaoClient{
 
 	List<Client> getAll();

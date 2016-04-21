@@ -1,4 +1,4 @@
-package fr.inti.banque.dao;
+package fr.inti.banque.daoImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +13,7 @@ import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import fr.inti.banque.dao.IDaoClient;
 import fr.inti.banque.entities.Client;
 
 /**

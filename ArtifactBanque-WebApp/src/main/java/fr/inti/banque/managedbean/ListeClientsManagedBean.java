@@ -13,9 +13,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.context.support.ServletContextLiveBeansView;
 
-import fr.inti.banque.dao.ClientDaoImpl;
 import fr.inti.banque.dao.IDao;
 import fr.inti.banque.dao.IDaoClient;
+import fr.inti.banque.daoImpl.ClientDaoImpl;
 import fr.inti.banque.entities.Client;
 import fr.inti.banque.service.IServiceClient;
 
