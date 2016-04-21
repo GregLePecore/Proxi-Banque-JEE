@@ -11,12 +11,12 @@
     	<h:form id="formulaire">    
     	 	    	
     	<p:contextMenu>
-			<p:menuitem value="Supprimer" actionListener="#{mbListeClients.deleteClient}" update="tableauClients" icon="ui-icon-close" selection="#{mbListeClients.clientSelected}" selectionMode="single" rowKey="#{client.id}"/>
+			<p:menuitem value="Supprimer" actionListener="#{mbListeClients.deleteClient}" update="tableauClients" icon="ui-icon-close"/>
 			<p:menuitem value="Editer" icon="ui-icon-arrowrefresh-1-w"/>                   
 		</p:contextMenu>
 
 <!--     	AFFICHAGE DE LA LISTE DE CLIENTS	 -->	
-    	<p:dataTable id="tableauClients" value="#{mbListeClients.clients}" var="client" rows="3" paginator="true">
+    	<p:dataTable id="tableauClients" value="#{mbListeClients.clients}" var="client" rows="3" paginator="true" selection="#{mbListeClients.clientSelected}" selectionMode="single" rowKey="#{client.id}">
                 <p:column headerText="ID" sortBy="#{client.id}">
                      #{client.id}
                 </p:column>

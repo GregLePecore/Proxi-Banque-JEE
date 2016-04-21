@@ -36,8 +36,7 @@ public class ListeClientsManagedBean implements Serializable{
 	}
 	
 	public void deleteClient() {
-		serviceClient.supprimerClient(clientSelected.getId());
-		clients.remove(clientSelected);
+			serviceClient.supprimerClient(clientSelected.getId());
 	}
 	
 	// GETTERS & SETTERS
