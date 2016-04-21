@@ -9,7 +9,7 @@
     </h:head>
     <h:body>
     	<h:form id="formulaire">    	
-    	<p:dataTable id="tableauClients" value="#{mbListeClients.listeTest}" var="client" rows="3" paginator="true">
+    	<p:dataTable id="tableauClients" value="#{mbListeClients.clients}" var="client" rows="3" paginator="true">
                 <p:column headerText="ID" sortBy="#{client.id}">
                      #{client.id}
                 </p:column>
