@@ -4,18 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.context.support.ServletContextLiveBeansView;
 
-import fr.inti.banque.dao.IDao;
-import fr.inti.banque.dao.IDaoClient;
-import fr.inti.banque.daoImpl.ClientDaoImpl;
 import fr.inti.banque.entities.Client;
 import fr.inti.banque.service.IServiceClient;
 
@@ -27,6 +19,7 @@ public class ListeClientsManagedBean implements Serializable{
 	private List<Client> clients = new ArrayList<Client>();
 	private Client clientAdd=new Client();
 	private Client clientSelected=new Client();
+	private Client clientSelectedUpdate=new Client();
 
 	public ListeClientsManagedBean() {
 	}
@@ -37,6 +30,11 @@ public class ListeClientsManagedBean implements Serializable{
 	
 	public void deleteClient() {
 			serviceClient.supprimerClient(clientSelected.getId());
+	}
+
+	public void updateClient() {
+			clientSelectedUpdate=clientSelected;
+			serviceClient.modifierClient(clientSelectedUpdate);
 	}
 	
 	// GETTERS & SETTERS
@@ -62,5 +60,12 @@ public class ListeClientsManagedBean implements Serializable{
 	public void setClientSelected(Client clientSelected) {
 		this.clientSelected = clientSelected;
 	}
-	
+
+	public Client getClientSelectedUpdate() {
+		return clientSelectedUpdate;
+	}
+
+	public void setClientSelectedUpdate(Client clientSelectedUpdate) {
+		this.clientSelectedUpdate = clientSelectedUpdate;
+	}
 }
