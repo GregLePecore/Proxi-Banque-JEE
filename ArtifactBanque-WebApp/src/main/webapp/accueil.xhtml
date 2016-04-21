@@ -8,7 +8,14 @@
         <title>Affichage des clients</title>
     </h:head>
     <h:body>
-    	<h:form id="formulaire">    	
+    	<h:form id="formulaire">    
+    	 	    	
+    	<p:contextMenu>
+			<p:menuitem value="Supprimer" update="tableauClients" icon="ui-icon-close"/>
+			<p:menuitem value="Editer" icon="ui-icon-arrowrefresh-1-w"/>                   
+		</p:contextMenu>
+
+<!--     	AFFICHAGE DE LA LISTE DE CLIENTS	 -->	
     	<p:dataTable id="tableauClients" value="#{mbListeClients.listeTest}" var="client" rows="3" paginator="true">
                 <p:column headerText="ID" sortBy="#{client.id}">
                      #{client.id}
@@ -31,7 +38,44 @@
                 <p:column headerText="Telephone" sortBy="#{client.telephone}">
                      #{client.telephone}
                 </p:column>                                                                                                       	
-    	</p:dataTable>    	
+    	</p:dataTable>
+    	
+    	<br></br>
+    	
+<!--     	FORMULAIRE D'AJOUT -->
+    	<p:panelGrid id="formulaireAjout">
+	    	 <f:facet name="header">  
+	            <p:row>  
+	                <p:column style="font-weight: bold;">Client</p:column>  
+	                <p:column>Input</p:column>  
+	            </p:row>
+	             <p:row>  
+		            <p:column>	Nom : </p:column>  
+		            <p:column>	<p:inputText id="inputNom"/>	  </p:column>  
+		        </p:row>
+				<p:row>  
+		            <p:column>	Prénom : </p:column>  
+		            <p:column>	<p:inputText id="inputPrenom"/>	  </p:column>  
+		        </p:row>
+	             <p:row>  
+		            <p:column>	Adresse : </p:column>  
+		            <p:column>	<p:inputText id="inputAdresse"/>	  </p:column>  
+		        </p:row>
+	             <p:row>  
+		            <p:column>	Code Postal : </p:column>  
+		            <p:column>	<p:inputText id="inputCodePostal"/>	  </p:column>  
+		        </p:row>
+	             <p:row>  
+		            <p:column>	Ville : </p:column>  
+		            <p:column>	<p:inputText id="inputVille"/>	  </p:column>  
+		        </p:row>
+	             <p:row>  
+		            <p:column>	Téléphone : </p:column>  
+		            <p:column>	<p:inputText id="inputTelephone"/>	  </p:column>  
+		        </p:row>	         
+	        </f:facet>
+    	</p:panelGrid>
+    	<p:button value="Ajouter" id="boutonAjout" icon="ui-icon-disk" /> 	   	
     	
     	</h:form>
      </h:body>
