@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import fr.inti.banque.entities.Client;
@@ -24,14 +25,15 @@ import fr.inti.banque.entities.Client;
  *      supprimer un client par son ID et de mettre à jour les informations d'un
  *      client.
  */
-@Repository("clientDaoBean")
+@Repository("daoClient")
 @Transactional
-public class ClientDaoImpl implements IDao<Client> {
+@Component
+public class ClientDaoImpl implements IDaoClient {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
-	private Session getSession(){
+
+	private Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
 
@@ -41,7 +43,7 @@ public class ClientDaoImpl implements IDao<Client> {
 	}
 
 	public Client getById(int id) {
-		Client client = (Client)getSession().get(Client.class, id);
+		Client client = (Client) getSession().get(Client.class, id);
 		return client;
 	}
 
@@ -50,7 +52,7 @@ public class ClientDaoImpl implements IDao<Client> {
 	}
 
 	public void deleteById(int id) {
-		
+
 		Client clientToDelete = this.getById(id);
 		getSession().delete(clientToDelete);
 	}
