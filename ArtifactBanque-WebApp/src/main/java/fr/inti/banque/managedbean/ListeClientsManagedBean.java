@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 
-import fr.inti.banque.dao.ClientDaoImpl;
 import fr.inti.banque.dao.IDao;
 import fr.inti.banque.dao.IDaoClient;
+import fr.inti.banque.daoImpl.ClientDaoImpl;
 import fr.inti.banque.entities.Client;
 import fr.inti.banque.service.IServiceClient;
 
@@ -47,7 +47,6 @@ public class ListeClientsManagedBean implements Serializable{
 	public List<Client> getClients() {
 		System.out.println("Ceci est le GET");
 		clients = serviceClient.obtenirAllClients();
-
 		return clients;
 	}
 
