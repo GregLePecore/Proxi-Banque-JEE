@@ -59,7 +59,12 @@ public class CompteEpargneDaoImpl implements IDaoCompteEpargne {
 
 	public CompteEpargne getByNumero(String numero) {
 		List<CompteEpargne> listeCE= getSession().createQuery("from compteEpargne c where c.numero=?").setParameter(0, numero).list();
+		if(listeCE.isEmpty()){
+			return null;
+		}
 		return listeCE.get(0);
+
+
 	}
 
 }

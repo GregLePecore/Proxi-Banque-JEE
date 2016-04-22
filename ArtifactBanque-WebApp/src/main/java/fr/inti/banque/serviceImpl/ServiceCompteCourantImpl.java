@@ -7,7 +7,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import fr.inti.banque.dao.IDaoCompteCourant;
+import fr.inti.banque.dao.IDaoCompteEpargne;
 import fr.inti.banque.entities.CompteCourant;
+import fr.inti.banque.entities.CompteEpargne;
 import fr.inti.banque.service.IServiceCompteCourant;
 
 /**
@@ -23,6 +25,9 @@ public class ServiceCompteCourantImpl implements IServiceCompteCourant {
 
 	@Autowired
 	private IDaoCompteCourant daoCompteCourant;
+	
+	@Autowired
+	private IDaoCompteEpargne daoCompteEpargne;
 
 	public List<CompteCourant> obtenirAllCompteCourant() {
 		return daoCompteCourant.getAll();
@@ -58,5 +63,18 @@ public class ServiceCompteCourantImpl implements IServiceCompteCourant {
 
 	public CompteCourant obtenirCompteCourantByNumero(String numero) {
 		return daoCompteCourant.getByNumero(numero);
+	}
+
+	public void virementCompteACompte(CompteCourant ccEmetteur, CompteEpargne ceRecepteur, double montant) {
+		if(ccEmetteur.getSolde() > montant){
+			ccEmetteur.setSolde(ccEmetteur.getSolde() - montant);
+			ceRecepteur.setSolde(ceRecepteur.getSolde() + montant);
+			daoCompteCourant.update(ccEmetteur);
+			daoCompteEpargne.update(ceRecepteur);
+		}
+		else {
+			System.out.println("T'as pas les sous négro !");
+		}
+		
 	}
 }

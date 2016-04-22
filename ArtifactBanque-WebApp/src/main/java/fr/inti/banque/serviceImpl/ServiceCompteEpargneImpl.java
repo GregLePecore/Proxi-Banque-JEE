@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import fr.inti.banque.dao.IDaoCompteCourant;
 import fr.inti.banque.dao.IDaoCompteEpargne;
+import fr.inti.banque.entities.CompteCourant;
 import fr.inti.banque.entities.CompteEpargne;
 import fr.inti.banque.service.IServiceCompteEpargne;
 
@@ -23,6 +25,9 @@ public class ServiceCompteEpargneImpl implements IServiceCompteEpargne {
 
 	@Autowired
 	private IDaoCompteEpargne daoCompteEpargne;
+	
+	@Autowired
+	private IDaoCompteCourant daoCompteCourant;
 
 	public List<CompteEpargne> obtenirAllCompteEpargne() {
 		return daoCompteEpargne.getAll();
@@ -44,12 +49,12 @@ public class ServiceCompteEpargneImpl implements IServiceCompteEpargne {
 		daoCompteEpargne.update(object);
 	}
 
-	public void virementCompteACompte(CompteEpargne ccEmetteur, CompteEpargne ccRecepteur, double montant) {
-		if(ccEmetteur.getSolde() > montant){
-			ccEmetteur.setSolde(ccEmetteur.getSolde() - montant);
-			ccRecepteur.setSolde(ccRecepteur.getSolde() + montant);
-			daoCompteEpargne.update(ccEmetteur);
-			daoCompteEpargne.update(ccRecepteur);
+	public void virementCompteACompte(CompteEpargne ceEmetteur, CompteEpargne ceRecepteur, double montant) {
+		if(ceEmetteur.getSolde() > montant){
+			ceEmetteur.setSolde(ceEmetteur.getSolde() - montant);
+			ceRecepteur.setSolde(ceRecepteur.getSolde() + montant);
+			daoCompteEpargne.update(ceEmetteur);
+			daoCompteEpargne.update(ceRecepteur);
 		}
 		else {
 			System.out.println("T'as pas les sous négro !");
@@ -58,5 +63,17 @@ public class ServiceCompteEpargneImpl implements IServiceCompteEpargne {
 
 	public CompteEpargne obtenirCompteEpargneByNumero(String numero) {
 		return daoCompteEpargne.getByNumero(numero);
+	}
+
+	public void virementCompteACompte(CompteEpargne ceEmetteur, CompteCourant ccRecepteur, double montant) {
+		if(ceEmetteur.getSolde() > montant){
+			ceEmetteur.setSolde(ceEmetteur.getSolde() - montant);
+			ccRecepteur.setSolde(ccRecepteur.getSolde() + montant);
+			daoCompteEpargne.update(ceEmetteur);
+			daoCompteCourant.update(ccRecepteur);
+		}
+		else {
+			System.out.println("T'as pas les sous négro !");
+		}
 	}
 }

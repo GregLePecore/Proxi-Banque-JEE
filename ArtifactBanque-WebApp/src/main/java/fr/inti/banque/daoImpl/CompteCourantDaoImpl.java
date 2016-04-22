@@ -60,6 +60,10 @@ public class CompteCourantDaoImpl implements IDaoCompteCourant {
 
 	public CompteCourant getByNumero(String numero) {
 		List<CompteCourant> listeCC= getSession().createQuery("from compteCourant c where c.numero=?").setParameter(0, numero).list();
+		if(listeCC.isEmpty()){
+			return null;
+		}
 		return listeCC.get(0);
+
 	}	
 }

@@ -51,8 +51,9 @@ public class TestServiceCCMain {
 		//
 		 
 //		 GetCompteCourant By Numero + affichage Console
-//		 CompteCourant ccNum=ccService.obtenirCompteCourantByNumero("68GR1");
+//		 CompteCourant ccNum=ccService.obtenirCompteCourantByNumero("0124");
 //		 System.out.println("Compte Courant Get By Numero :"+ccNum.getDateOuverture()+ccNum.getDecouvert()+ccNum.getSolde());
+		 
 		 
 		// // Ajout d'un compte courant
 		// CompteCourant ccAdd = new CompteCourant("99999999", 1500.0, 666.0,

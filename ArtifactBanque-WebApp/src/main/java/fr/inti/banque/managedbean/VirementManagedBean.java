@@ -39,40 +39,27 @@ public class VirementManagedBean implements Serializable {
 
 		System.out.println("OH MON DIEU LE GROS VIREMENT !");
 
-		// But : Récupérer les comptes à partir des numéros, puis appeler la
-		// méthode correspondante selon les types de comptes
-		// On a un numéroCrediteur, on appelle le serviceCC pour récupByNumero,
-		// si on a rien on appelle l'autre, si y'a rien le numéro est faux
-		// Same pour l'autre numéro, et après on appelle la méthode
-		// correspondante
+		CompteCourant cc1 = serviceCC.obtenirCompteCourantByNumero(numeroCrediteur);
+		CompteCourant cc2 = serviceCC.obtenirCompteCourantByNumero(numeroDebiteur);
+		CompteEpargne ce1 = serviceCE.obtenirCompteEpargneByNumero(numeroCrediteur);
+		CompteEpargne ce2 = serviceCE.obtenirCompteEpargneByNumero(numeroDebiteur);
 
-		// Pour l'instant : test avec uniquement des comptes courants, récupérés
-		// par ID
 
-		// TODO : Les méthodes obtenirCompteCourantById : A modifer avec
-		// getByNumero
+		if (cc1 != null) {
+			if (cc2 != null) {
+				serviceCC.virementCompteACompte(cc1, cc2, montant);
+			} else if (ce2 != null) {
+				serviceCC.virementCompteACompte(cc1, ce2, montant);
+			}
+		}
+		if (ce1 != null) {
+			if (cc2 != null) {
+				serviceCE.virementCompteACompte(ce1, cc2, montant);
+			} else if (ce2 != null) {
+				serviceCE.virementCompteACompte(ce1, ce2, montant);
+			}
+		}
 
-//		CompteCourant cc1 = serviceCC.obtenirCompteCourantByNumero(numeroCrediteur);
-//		CompteCourant cc2 = serviceCC.obtenirCompteCourantByNumero(numeroDebiteur);
-//		CompteEpargne ce1 = serviceCE.obtenirCompteEpargneByNumero(numeroCrediteur);
-//		CompteEpargne ce2 = serviceCE.obtenirCompteEpargneByNumero(numeroDebiteur);
-//
-//		if (cc1 != null) {
-//			if (cc2 != null) {
-//				serviceCC.virementCompteACompte(cc1, cc2, montant);
-//			} else if (ce2 != null) {
-//				serviceCC.virementCompteACompte(cc1, ce2, montant);
-//			}
-//		}
-//
-//		if (ce1 != null) {
-//			if (cc2 != null) {
-//				serviceCE.virementCompteACompte(ce1, cc2, montant);
-//			} else if (ce2 != null) {
-//				serviceCE.virementCompteACompte(ce1, ce2, montant);
-//			}
-//		}
-//
 	}
 
 	// GETTERS & SETTERS
