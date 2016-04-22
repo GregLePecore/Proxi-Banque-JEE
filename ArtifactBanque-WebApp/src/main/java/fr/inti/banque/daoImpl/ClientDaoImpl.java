@@ -1,15 +1,12 @@
 package fr.inti.banque.daoImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -38,6 +35,7 @@ public class ClientDaoImpl implements IDaoClient {
 		return sessionFactory.getCurrentSession();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Client> getAll() {
 		System.out.println("ODKZAODKAZODKJOAZKDOAZKDOZAKDOKAZOKDAOZZKDOAKSS");
 		return getSession().createQuery("from client").list();

@@ -2,7 +2,6 @@ package fr.inti.banque.dao;
 
 import java.util.List;
 
-import fr.inti.banque.entities.Client;
 import fr.inti.banque.entities.CompteCourant;
 
 /**

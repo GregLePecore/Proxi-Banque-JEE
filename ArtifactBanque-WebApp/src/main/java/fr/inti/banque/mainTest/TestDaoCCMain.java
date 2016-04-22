@@ -13,8 +13,7 @@ import fr.inti.banque.entities.CompteCourant;
  * 
  * @author El Grande Geoffrey
  * 
- * @see Classe main pour les tests locaux du dao et du service Compte Courant
- *      (CC).
+ * @see Classe main pour les tests locaux du dao Compte Courant (CC).
  *
  */
 public class TestDaoCCMain {
@@ -30,36 +29,32 @@ public class TestDaoCCMain {
 		// IDaoCompteCourant ccDao = (IDaoCompteCourant)
 		// ctx.getBean("daoCompteCourant");
 		// List<CompteCourant> comptesCourants = new ArrayList<CompteCourant>();
-
+		//
 		// Get All comptes courants + affichage console
 		// comptesCourants = ccDao.getAll();
 		// for (CompteCourant cc : comptesCourants) {
 		// System.out.println(cc.getId() + cc.getDateOuverture() +
 		// cc.getNumero() + cc.getSolde() + cc.getDecouvert());
 		// }
-
+		//
 		// Get Compte Courant by Id + affichage console
 		// CompteCourant ccId = ccDao.getById(2);
 		// System.out.println("Compte Courant get By Id : " + ccId.getId() +
 		// ccId.getDateOuverture() + ccId.getNumero()
 		// + ccId.getSolde() + ccId.getDecouvert());
-
+		//
 		// Ajout d'un compte courant
 		// CompteCourant ccAdd = new CompteCourant("0123456789", 2000.0, 5000.0,
 		// "LE CHOIX DANS LA DATE");
 		// ccDao.add(ccAdd);
-
+		//
 		// Suppression d'un compte courant
 		// ccDao.deleteById(6);
-
+		//
 		// Modification d'un compte courant
 		// CompteCourant ccToUpdate = ccDao.getById(5);
 		// ccToUpdate.setDateOuverture("La bonne date pleine de swag");
 		// ccDao.update(ccToUpdate);
-
-		/**
-		 * Tests du service Compte Courant
-		 */
 
 	}
 
