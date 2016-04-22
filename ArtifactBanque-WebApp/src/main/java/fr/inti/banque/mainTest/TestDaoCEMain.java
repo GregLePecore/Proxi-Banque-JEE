@@ -27,11 +27,11 @@ public class TestDaoCEMain {
 		 * Test du DAO Compte Epargne
 		 **/
 
-		// ApplicationContext ctx = new
-		// FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/applicationContext.xml");
-		// IDaoCompteEpargne ceDao = (IDaoCompteEpargne)
-		// ctx.getBean("daoCompteEpargne");
-		// List<CompteEpargne> comptesEpargnes = new ArrayList<CompteEpargne>();
+//		 ApplicationContext ctx = new
+//		 FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/applicationContext.xml");
+//		 IDaoCompteEpargne ceDao = (IDaoCompteEpargne)
+//		 ctx.getBean("daoCompteEpargne");
+//		 List<CompteEpargne> comptesEpargnes = new ArrayList<CompteEpargne>();
 		//
 		// // Get All comptes epargnes + affichage console
 		// comptesEpargnes = ceDao.getAll();
@@ -46,6 +46,11 @@ public class TestDaoCEMain {
 		// ceId.getDateOuverture() + ceId.getNumero()
 		// + ceId.getSolde() + ceId.getTaux());
 		//
+		
+		// Get compte Courant by Numero + affichage console
+//			CompteEpargne ceNum=ceDao.getByNumero("TR00L");
+//			System.out.println("Compte Epargne get By Numero :" +ceNum.getNumero()+ceNum.getDateOuverture()+ceNum.getSolde()+ceNum.getTaux());
+		
 		// // Ajout d'un compte Epargne
 		// CompteEpargne ceAdd = new CompteEpargne("0123456789", 0.2, 5000.0,
 		// "La doute d'ouvirtoure");

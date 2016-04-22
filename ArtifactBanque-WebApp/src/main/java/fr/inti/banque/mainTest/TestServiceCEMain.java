@@ -26,13 +26,13 @@ public class TestServiceCEMain {
 		 * Tests du service Compte Epargne
 		 */
 
-		// ApplicationContext ctx = new
-		// FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/applicationContext.xml");
-		// IServiceCompteEpargne ceService = (IServiceCompteEpargne)
-		// ctx.getBean("serviceCompteEpargne");
-		// IServiceClient serviceClient = (IServiceClient)
-		// ctx.getBean("serviceClient");
-		// List<CompteEpargne> comptesEpargnes = new ArrayList<CompteEpargne>();
+//		 ApplicationContext ctx = new
+//		 FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/applicationContext.xml");
+//		 IServiceCompteEpargne ceService = (IServiceCompteEpargne)
+//		 ctx.getBean("serviceCompteEpargne");
+//		 IServiceClient serviceClient = (IServiceClient)
+//		 ctx.getBean("serviceClient");
+//		 List<CompteEpargne> comptesEpargnes = new ArrayList<CompteEpargne>();
 		//
 		// // Get All comptes epargnes + affichage console
 		// comptesEpargnes = ceService.obtenirAllCompteEpargne();
@@ -47,6 +47,11 @@ public class TestServiceCEMain {
 		// ceId.getDateOuverture() + ceId.getNumero()
 		// + ceId.getSolde() + ceId.getTaux());
 		//
+		 
+		 // Get Compte Epargne By Numero + Affichage Console
+//		 CompteEpargne ceNum=ceService.obtenirCompteEpargneByNumero("TR00L");
+//		 System.out.println("Compte Epargne Get By Numero :"+ceNum.getDateOuverture()+ceNum.getNumero()+ceNum.getSolde());
+		 
 		// // Ajout d'un compte Epargne
 		// CompteEpargne ceAdd = new CompteEpargne("0123456789", 0.2, 5000.0,
 		// "La doute d'ouvirtoure");

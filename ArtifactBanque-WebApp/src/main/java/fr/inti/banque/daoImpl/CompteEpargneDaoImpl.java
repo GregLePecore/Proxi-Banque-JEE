@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import fr.inti.banque.dao.IDaoCompteEpargne;
+import fr.inti.banque.entities.CompteCourant;
 import fr.inti.banque.entities.CompteEpargne;
 
 /**
@@ -54,6 +55,11 @@ public class CompteEpargneDaoImpl implements IDaoCompteEpargne {
 
 	public void update(CompteEpargne object) {
 		getSession().update(object);
+	}
+
+	public CompteEpargne getByNumero(String numero) {
+		List<CompteEpargne> listeCE= getSession().createQuery("from compteEpargne c where c.numero=?").setParameter(0, numero).list();
+		return listeCE.get(0);
 	}
 
 }

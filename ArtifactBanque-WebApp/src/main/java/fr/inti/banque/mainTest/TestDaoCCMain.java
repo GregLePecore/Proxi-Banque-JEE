@@ -24,11 +24,11 @@ public class TestDaoCCMain {
 		 * Test du DAO Compte Courant
 		 **/
 
-		// ApplicationContext ctx = new
-		// FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/applicationContext.xml");
-		// IDaoCompteCourant ccDao = (IDaoCompteCourant)
-		// ctx.getBean("daoCompteCourant");
-		// List<CompteCourant> comptesCourants = new ArrayList<CompteCourant>();
+//		 ApplicationContext ctx = new
+//		 FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/applicationContext.xml");
+//		 IDaoCompteCourant ccDao = (IDaoCompteCourant)
+//		 ctx.getBean("daoCompteCourant");
+//		 List<CompteCourant> comptesCourants = new ArrayList<CompteCourant>();
 		//
 		// Get All comptes courants + affichage console
 		// comptesCourants = ccDao.getAll();
@@ -43,6 +43,12 @@ public class TestDaoCCMain {
 		// ccId.getDateOuverture() + ccId.getNumero()
 		// + ccId.getSolde() + ccId.getDecouvert());
 		//
+		
+		// Get compte Courant by Numero + affichage console
+//			CompteCourant ccNum=ccDao.getByNumero("R21A9");
+//			System.out.println("Compte Courant get By Numero :" +ccNum.getNumero()+ccNum.getDateOuverture()+ccNum.getSolde()+ccNum.getDecouvert());
+		
+		
 		// Ajout d'un compte courant
 		// CompteCourant ccAdd = new CompteCourant("0123456789", 2000.0, 5000.0,
 		// "LE CHOIX DANS LA DATE");

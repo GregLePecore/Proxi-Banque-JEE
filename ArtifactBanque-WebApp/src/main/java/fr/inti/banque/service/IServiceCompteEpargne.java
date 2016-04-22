@@ -18,6 +18,8 @@ public interface IServiceCompteEpargne {
 
 	CompteEpargne obtenirCompteEpargneById(int id);
 
+	CompteEpargne obtenirCompteEpargneByNumero(String numero);
+	
 	void ajouterCompteEpargne(CompteEpargne object);
 
 	void supprimerCompteEpargne(int id);

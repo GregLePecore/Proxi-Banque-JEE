@@ -55,4 +55,8 @@ public class ServiceCompteCourantImpl implements IServiceCompteCourant {
 			System.out.println("T'as pas les sous négro !");
 		}
 	}
+
+	public CompteCourant obtenirCompteCourantByNumero(String numero) {
+		return daoCompteCourant.getByNumero(numero);
+	}
 }

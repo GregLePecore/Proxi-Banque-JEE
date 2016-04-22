@@ -15,7 +15,7 @@ public interface IDaoCompteEpargne {
 	List<CompteEpargne> getAll();
 
 	CompteEpargne getById(int id);
-
+	CompteEpargne getByNumero(String numero);
 	void add(CompteEpargne object);
 
 	void deleteById(int id);

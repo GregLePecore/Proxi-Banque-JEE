@@ -2,8 +2,10 @@ package fr.inti.banque.daoImpl;
 
 import java.util.List;
 
+import javax.management.Query;
 import javax.transaction.Transactional;
 
+import org.hibernate.QueryParameterException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,4 +57,9 @@ public class CompteCourantDaoImpl implements IDaoCompteCourant {
 	public void update(CompteCourant object) {
 		getSession().update(object);
 	}
+
+	public CompteCourant getByNumero(String numero) {
+		List<CompteCourant> listeCC= getSession().createQuery("from compteCourant c where c.numero=?").setParameter(0, numero).list();
+		return listeCC.get(0);
+	}	
 }

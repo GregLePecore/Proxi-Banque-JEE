@@ -27,15 +27,15 @@ public class TestServiceCCMain {
 		 * Tests du service Compte Courant
 		 */
 
-		// ApplicationContext ctx = new
-		// FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/applicationContext.xml");
-		// IServiceCompteCourant ccService = (IServiceCompteCourant)
-		// ctx.getBean("serviceCompteCourant");
-		// IServiceClient serviceClient = (IServiceClient)
-		// ctx.getBean("serviceClient");
-		// List<CompteCourant> comptesCourants = new ArrayList<CompteCourant>();
-		//
-		//
+//		 ApplicationContext ctx = new
+//		 FileSystemXmlApplicationContext("src/main/webapp/WEB-INF/applicationContext.xml");
+//		 IServiceCompteCourant ccService = (IServiceCompteCourant)
+//		 ctx.getBean("serviceCompteCourant");
+//		 IServiceClient serviceClient = (IServiceClient)
+//		 ctx.getBean("serviceClient");
+//		 List<CompteCourant> comptesCourants = new ArrayList<CompteCourant>();
+		
+		
 		// // Get All comptes courants + affichage console
 		// comptesCourants = ccService.obtenirAllCompteCourant();
 		// for (CompteCourant cc : comptesCourants) {
@@ -49,6 +49,11 @@ public class TestServiceCCMain {
 		// ccId.getDateOuverture() + ccId.getNumero()
 		// + ccId.getSolde() + ccId.getDecouvert());
 		//
+		 
+//		 GetCompteCourant By Numero + affichage Console
+//		 CompteCourant ccNum=ccService.obtenirCompteCourantByNumero("68GR1");
+//		 System.out.println("Compte Courant Get By Numero :"+ccNum.getDateOuverture()+ccNum.getDecouvert()+ccNum.getSolde());
+		 
 		// // Ajout d'un compte courant
 		// CompteCourant ccAdd = new CompteCourant("99999999", 1500.0, 666.0,
 		// "La bonne date du service");

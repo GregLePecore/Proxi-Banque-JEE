@@ -15,6 +15,7 @@ public interface IDaoCompteCourant {
 
 	List<CompteCourant> getAll();
 	CompteCourant getById(int id);
+	CompteCourant getByNumero(String numero);
 	void add(CompteCourant object);
 	void deleteById(int id);
 	void update(CompteCourant object);

@@ -17,7 +17,9 @@ public interface IServiceCompteCourant {
 	List<CompteCourant> obtenirAllCompteCourant();
 
 	CompteCourant obtenirCompteCourantById(int id);
-
+	
+	CompteCourant obtenirCompteCourantByNumero(String numero);
+	
 	void ajouterCompteCourant(CompteCourant object);
 
 	void supprimerCompteCourant(int id);

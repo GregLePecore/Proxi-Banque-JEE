@@ -34,17 +34,14 @@ public class ServiceCompteEpargneImpl implements IServiceCompteEpargne {
 
 	public void ajouterCompteEpargne(CompteEpargne object) {
 		daoCompteEpargne.add(object);
-
 	}
 
 	public void supprimerCompteEpargne(int id) {
 		daoCompteEpargne.deleteById(id);
-
 	}
 
 	public void modifierCompteEpargne(CompteEpargne object) {
 		daoCompteEpargne.update(object);
-
 	}
 
 	public void virementCompteACompte(CompteEpargne ccEmetteur, CompteEpargne ccRecepteur, double montant) {
@@ -57,7 +54,9 @@ public class ServiceCompteEpargneImpl implements IServiceCompteEpargne {
 		else {
 			System.out.println("T'as pas les sous négro !");
 		}
-
 	}
 
+	public CompteEpargne obtenirCompteEpargneByNumero(String numero) {
+		return daoCompteEpargne.getByNumero(numero);
+	}
 }
