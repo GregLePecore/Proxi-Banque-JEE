@@ -28,16 +28,20 @@ public class ListeClientsManagedBean implements Serializable{
 	}
 	
 	public void addClient() {
+		System.out.println(clientAdd.getId()+clientAdd.getNom());
 		serviceClient.ajouterClient(clientAdd);
 	}
 	
 	public void deleteClient() {
+		System.out.println(clientSelected.getId()+clientSelected.getNom());
 			serviceClient.supprimerClient(clientSelected.getId());
+			clientSelected=null;
 	}
-
-//	public void updateClient() {
-//			serviceClient.modifierClient(clientSelected);
-//	}
+	
+	public void updateClient() {
+			serviceClient.modifierClient(clientSelected);
+			clients.set(clients.indexOf(clientSelected), clientSelected);
+	}
 	
 	// GETTERS & SETTERS
 	

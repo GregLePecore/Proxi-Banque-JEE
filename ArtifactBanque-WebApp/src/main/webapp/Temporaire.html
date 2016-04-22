@@ -1,1 +1,23 @@
+            <!-- FENETRE QUI S'OUVRE EN CLIQUANT SUR "EDITER" -->
+            <p:dialog widgetVar="popin" header="Modification de champ" modal="true" minHeight="40" closable="false">
+                <p:panel id="infoClient">
+                    <label>Id : </label>#{mbListeClients.clientSelected.id}
+                    <br/><label>Nom : </label><p:inputText value="#{mbListeClients.clientSelected.nom}">
+                    </p:inputText>
+                    <br/><label>Prenom : </label><p:inputText value="#{mbListeClients.clientSelected.prenom}">
+                    </p:inputText>
+                    <br/><label>Adresse : </label><p:inputText value="#{mbListeClients.clientSelected.adresse}">
+                    </p:inputText>
+                    <br/><label>Code Postal : </label><p:inputText value="#{mbListeClients.clientSelected.codePostal}">
+                    </p:inputText>
+                    <br/><label>Ville : </label><p:inputText value="#{mbListeClients.clientSelected.ville}">
+                    </p:inputText>
+                    <br/><label>Telephone : </label><p:inputText value="#{mbListeClients.clientSelected.telephone}">
+                    </p:inputText>    	 	    			
+                    <p:commandButton value="Annuler" type="button" onclick="PF('popin').hide()"/>
+                 </p:panel>
+            </p:dialog> 
+
+
+
 <br/><p:commandButton value="Editer" validateClient="true" actionListener="#{mbListeClients.updateClient}" oncomplete="PF('popin').hide()"/> 

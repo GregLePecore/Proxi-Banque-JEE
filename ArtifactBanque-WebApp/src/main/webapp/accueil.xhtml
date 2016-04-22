@@ -10,13 +10,14 @@
     <h:body>
     	<h:form id="formulaire">    
 	
-    	<p:contextMenu>
+    	<p:contextMenu for="tableauClients">
 			<p:menuitem value="Supprimer" actionListener="#{mbListeClients.deleteClient}" update="tableauClients" icon="ui-icon-close"/>                  
-			<p:menuitem value="Editer" icon="ui-icon-arrowrefresh-1-w" update="infoClient" oncomplete="PF('popin').show();"/>
+			<p:menuitem value="Editer" icon="ui-icon-arrowrefresh-1-w" oncomplete="PF('popin').show();"/>
 		</p:contextMenu>		
 	
 <!--     	AFFICHAGE DE LA LISTE DE CLIENTS	 -->	
-    	<p:dataTable id="tableauClients" value="#{mbListeClients.clients}" var="client" rows="7" paginator="true" selection="#{mbListeClients.clientSelected}" selectionMode="single" rowKey="#{client.id}">
+    	<p:dataTable id="tableauClients" value="#{mbListeClients.clients}" var="client" rows="7" paginator="true" selection="#{mbListeClients.clientSelected}" selectionMode="single" rowKey="#{client.id}" >  
+                <p:ajax event="contextMenu" update=":formulaire:infoClient"/>
                 <p:column headerText="ID" sortBy="#{client.id}">
                      #{client.id}
                 </p:column>
@@ -75,9 +76,9 @@
 		        </p:row>	         
 	        </f:facet>
     	</p:panelGrid>
-    	<p:commandButton update="tableauClients" value="Ajouter" icon="ui-icon-disk" actionListener="#{mbListeClients.addClient}"></p:commandButton> 		   	
+		<p:commandButton update=":formulaire:tableauClients" value="Ajouter" icon="ui-icon-disk" actionListener="#{mbListeClients.addClient}"></p:commandButton> 		   	
 
-            <!-- FENETRE QUI S'OUVRE EN CLIQUANT SUR "EDITER" -->
+		            <!-- FENETRE QUI S'OUVRE EN CLIQUANT SUR "EDITER" -->
             <p:dialog widgetVar="popin" header="Modification de champ" modal="true" minHeight="40" closable="false">
                 <p:panel id="infoClient">
                     <label>Id : </label>#{mbListeClients.clientSelected.id}
@@ -93,10 +94,10 @@
                     </p:inputText>
                     <br/><label>Telephone : </label><p:inputText value="#{mbListeClients.clientSelected.telephone}">
                     </p:inputText>    	 	    			
+                    <br/><p:commandButton value="Editer" validateClient="true" actionListener="#{mbListeClients.updateClient}" oncomplete="PF('popin').hide()" update=":formulaire:tableauClients"/> 
                     <p:commandButton value="Annuler" type="button" onclick="PF('popin').hide()"/>
                  </p:panel>
             </p:dialog> 
-
     	</h:form>
      </h:body>
      
