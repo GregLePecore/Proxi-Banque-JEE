@@ -22,7 +22,7 @@ public class ListeClientsManagedBean implements Serializable{
 	private IServiceClient serviceClient;
 	private List<Client> clients = new ArrayList<Client>();
 	private Client clientAdd=new Client();
-	private Client clientSelected=0;
+	private Client clientSelected;
 
 	public ListeClientsManagedBean() {
 	}
