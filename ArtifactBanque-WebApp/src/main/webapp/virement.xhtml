@@ -16,22 +16,25 @@
 	<h:form id="formulaire">
 
 		<p:panelGrid columns="2">
-			<h:outputText value="Compte qui envoie la thune :" />
-			<p:inputText value="#{virementMB.numeroCrediteur}"></p:inputText>
+			<p:outputLabel value="Compte qui envoie la thune :"/>
+			<p:selectOneMenu value="#{virementMB.numeroCrediteur}" effect="fold">
+				<f:selectItems value="#{virementMB.numerosComptes}"/>
+	        </p:selectOneMenu>
 
 			<h:outputText value="Le flouz en question :" />
 			<p:inputText value="#{virementMB.montant}"></p:inputText>
-
-			<h:outputText value="Compte qui reçoit le pognon :" />
-			<p:inputText value="#{virementMB.numeroDebiteur}"></p:inputText>
+			
+			<p:outputLabel value="Compte qui reçoit le pognon :"/>
+			<p:selectOneMenu value="#{virementMB.numeroDebiteur}" effect="fold">
+				<f:selectItems value="#{virementMB.numerosComptes}"/>
+	        </p:selectOneMenu>
 
 			<p:growl id="growl" life="2000" />
 			<p:commandButton value="VIRE MOI TOUT LA DEDANS" id="VirementButton"
 				actionListener="#{virementMB.doVirement}" update="growl"
 				icon="ui-icon-disk" />
-
+				
 		</p:panelGrid>
-
 	</h:form>
 </h:body>
 </html>
