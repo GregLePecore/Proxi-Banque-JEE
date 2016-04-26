@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Appel au WebService</title>
+</h:head>
+<h:body>
+
+	<h:form id="formulaire">
+		<p:panelGrid id="simulation">
+			<f:facet name="header">
+				<p:row>
+					<p:column style="font-weight: bold;">SIMULATION par montants</p:column>
+					<p:column>Input</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	Montant : </p:column>
+					<p:column>
+						<p:inputText value="#{mbWebService.montant}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	Durée : </p:column>
+					<p:column>
+						<p:inputText value="#{mbWebService.duree}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	Teag : </p:column>
+					<p:column>
+						<p:inputText value="#{mbWebService.teag}" />
+					</p:column>
+				</p:row>
+			</f:facet>
+		</p:panelGrid>
+		<p:commandButton value="Simuler"
+			actionListener="#{mbWebService.simulation}"
+			update=":formulaire:resultats" />
+<br/>	
+		<p:panelGrid id="simulation1">
+			<f:facet name="header">
+				<p:row>
+					<p:column style="font-weight: bold;">SIMULATION par mensualités</p:column>
+					<p:column>Input</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	Mensualité : </p:column>
+					<p:column>
+						<p:inputText value="#{mbWebService.mensualite1}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	Durée : </p:column>
+					<p:column>
+						<p:inputText value="#{mbWebService.duree1}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	Teag : </p:column>
+					<p:column>
+						<p:inputText value="#{mbWebService.teag1}" />
+					</p:column>
+				</p:row>
+			</f:facet>
+		</p:panelGrid>
+		<p:commandButton value="Simuler"
+			actionListener="#{mbWebService.simulation1}"
+			update=":formulaire:resultats1" />
+<br/><br/><br/><br/><br/>
+		<p:panelGrid id="resultats">
+			<f:facet name="header">
+				<p:row>
+					<p:column style="font-weight: bold;">RESULTATS par montants</p:column>
+					<p:column>Output</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	Mensualité : </p:column>
+					<p:column>
+						<p:inputText value="#{mbWebService.mensualite}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	Montant Total : </p:column>
+					<p:column>
+						<p:inputText value="#{mbWebService.montantTotal}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	Montant Total Crédit : </p:column>
+					<p:column>
+						<p:inputText value="#{mbWebService.montantTotalCredit}" />
+					</p:column>
+				</p:row>
+			</f:facet>
+		</p:panelGrid>
+<br/>	
+		<p:panelGrid id="resultats1">
+			<f:facet name="header">
+				<p:row>
+					<p:column style="font-weight: bold;">RESULTATS par mensualités</p:column>
+					<p:column>Output</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	Capital : </p:column>
+					<p:column>
+						<p:inputText value="#{mbWebService.capital}" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>	Montant Total Crédit : </p:column>
+					<p:column>
+						<p:inputText value="#{mbWebService.montantTotalCredit1}" />
+					</p:column>
+				</p:row>
+			</f:facet>
+		</p:panelGrid>
+	</h:form>
+
+</h:body>
+
+</html>
